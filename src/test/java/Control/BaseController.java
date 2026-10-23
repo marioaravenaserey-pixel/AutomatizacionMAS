@@ -12,7 +12,7 @@ import Constant.Constant;
 import java.time.Duration;
 
 public class BaseController {
-    private WebDriver driver;
+    protected WebDriver driver;
     private WebDriverWait wait;
 
     public BaseController() {

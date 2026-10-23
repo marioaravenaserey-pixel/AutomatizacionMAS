@@ -8,6 +8,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import Constant.Navegador;
 
 public class Hooks {
     private Scenario scenario;
@@ -19,9 +20,15 @@ public class Hooks {
 
     @Before
     public void setUp(Scenario scenario){
+
         this.scenario = scenario;
         Constant.scenarioStep = scenario;
         Constant.build_name = "Nombre de Proyecto";
+
+        DriverContext.setUp(
+                Navegador.Chrome,
+                "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+        );
     }
 
     @After
